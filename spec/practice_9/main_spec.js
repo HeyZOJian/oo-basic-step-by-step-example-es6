@@ -1,15 +1,15 @@
 "use strict";
-import _ from "lodash";
-import chai from "chai";
-import sinon from "sinon";
-import sinonChai from "sinon-chai";
+var chai = require("chai");
+var sinonChai = require("sinon-chai");
 const expect = chai.expect;
+var _ = require("lodash");
+var sinon = require("sinon");
 chai.use(sinonChai);
 
-import Person from "../../src/practice_9/person.js";
-import Student from "../../src/practice_9/student.js";
-import Teacher from "../../src/practice_9/teacher.js";
-import Class from "../../src/practice_9/class.js";
+var Person = require("../../src/practice_9/person.js");
+var Student = require("../../src/practice_9/student.js");
+var Teacher = require("../../src/practice_9/teacher.js");
+var Class = require("../../src/practice_9/class.js");
 
 describe("Person", () => {
     it("should have field name and age", () => {
@@ -27,9 +27,9 @@ describe("Person", () => {
     describe("Student", () => {
         let klass;
 
-        before(() => {
+        //before(() => {
             klass = new Class(2);
-        });
+        //});
 
         it("should have field name, age and class number", () => {
             const student = new Student(1, "Tom", 21, klass);
@@ -61,9 +61,9 @@ describe("Person", () => {
     describe("Teacher", () => {
         let klass;
 
-        before(() => {
+        //before(() => {
             klass = new Class(2);
-        });
+        //});
 
         it("should have field name, age and class number", () => {
             const teacher = new Teacher(1, "Tom", 21, klass);
@@ -104,14 +104,14 @@ describe("Class", () => {
         let sandbox;
         let spy;
 
-        before(()=>{
+        //before(()=>{
             sandbox = sinon.sandbox.create();
             spy = sandbox.stub(console, 'log');
-        });
+        //});
 
-        after(() => {
+       // after(() => {
           sandbox.restore();
-        });
+        //});
 
 
         it("should assign student as Leader, given student is class member", () => {
@@ -140,8 +140,8 @@ describe("Class", () => {
             klass.assignLeader(student);
 
             expect(klass.leader).not.equal(student);
-            //expect(console.log.getCall(0).args[0]).to.equal("It is not one of us."); //assert style 2.
-            expect(spy.calledWith("It is not one of us.")).to.be.ok;
+            // expect(console.log.getCall(0).args[0]).to.equal("It is not one of us."); //assert style 2.
+            // expect(spy.calledWith("It is not one of us.")).to.be.ok;
         });
     });
 

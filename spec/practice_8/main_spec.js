@@ -1,15 +1,15 @@
 "use strict";
-import _ from "lodash";
-import chai from "chai";
-import sinon from "sinon";
-import sinonChai from "sinon-chai";
+var chai = require("chai");
+var sinonChai = require("sinon-chai");
 const expect = chai.expect;
+var _ = require("lodash");
+var sinon = require("sinon");
 chai.use(sinonChai);
 
-import Person from "../../src/practice_8/person.js";
-import Student from "../../src/practice_8/student.js";
-import Teacher from "../../src/practice_8/teacher.js";
-import Class from "../../src/practice_8/class.js";
+var Person = require("../../src/practice_8/person.js");
+var Student = require("../../src/practice_8/student.js");
+var Teacher = require("../../src/practice_8/teacher.js");
+var Class = require("../../src/practice_8/class.js");
 
 describe("Person", () => {
     it("should have field name and age", () => {
@@ -27,9 +27,9 @@ describe("Person", () => {
     describe("Student", () => {
         let klass;
 
-        before(() => {
+        // before(() => {
             klass = new Class(2);
-        });
+        // });
 
         it("should have field name, age and class number", () => {
             const student = new Student(1, "Tom", 21, klass);
@@ -60,9 +60,9 @@ describe("Person", () => {
     describe("Teacher", () => {
         let klass;
 
-        before(() => {
+        //before(() => {
             klass = new Class(2);
-        });
+        //});
 
         it("should have field name, age and class number", () => {
             const teacher = new Teacher(1, "Tom", 21, klass);
@@ -114,7 +114,7 @@ describe("Class", () => {
             const student = new Student(1, "Jerry", 21, otherKlass);
 
             klass.assignLeader(student);
-
+            
             expect(klass.leader).not.equal(student);
         });
     });

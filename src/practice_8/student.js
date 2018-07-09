@@ -16,9 +16,11 @@ class Student extends Person {
         }
         return introduceStr;
     }
+
     getKlassNumber(){
         return this.klass.number;
     }
+    
     getKlassName() {
         return this.klass.getDisplayName();
     }

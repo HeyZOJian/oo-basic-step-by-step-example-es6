@@ -1,12 +1,12 @@
 "use strict";
-import chai from "chai";
-import sinonChai from "sinon-chai";
+var chai = require("chai");
+var sinonChai = require("sinon-chai");
 const expect = chai.expect;
 chai.use(sinonChai);
 
-import Person from "../../src/practice_6/person.js";
-import Student from "../../src/practice_6/student.js";
-import Teacher from "../../src/practice_6/teacher.js";
+var Person = require("../../src/practice_6/person.js");
+var Student = require("../../src/practice_6/student.js");
+var Teacher = require("../../src/practice_6/teacher.js");
 
 
 describe("Person", () => {
@@ -37,24 +37,24 @@ describe("Person", () => {
         });
     });
 
-   describe("Teacher", () => {
-       it("should have field name, age and class number", () => {
-           const teacher = new Teacher("Tom", 21, 2);
-           expect(teacher.name).to.equal("Tom");
-           expect(teacher.age).to.equal(21);
-           expect(teacher.klass).to.equal(2);
-       });
+    describe("Teacher", () => {
+        it("should have field name, age and class number", () => {
+            const teacher = new Teacher("Tom", 21, 2);
+            expect(teacher.name).to.equal("Tom");
+            expect(teacher.age).to.equal(21);
+            expect(teacher.klass).to.equal(2);
+        });
 
-       it("should overwrite Person introduce, introduce with name, age and class number, given teacher have class", () => {
-           const teacher = new Teacher("Tom", 21, 2);
-           const introduce = teacher.introduce();
-           expect(introduce).to.equal("My name is Tom. I am 21 years old. I am a Teacher. I teach Class 2.");
-       });
+        it("should overwrite Person introduce, introduce with name, age and class number, given teacher have class", () => {
+            const teacher = new Teacher("Tom", 21, 2);
+            const introduce = teacher.introduce();
+            expect(introduce).to.equal("My name is Tom. I am 21 years old. I am a Teacher. I teach Class 2.");
+        });
 
-       it("should overwrite Person introduce, introduce with name, age and class number, given teacher have no class", () => {
-           const teacher = new Teacher("Tom", 21);
-           const introduce = teacher.introduce();
-           expect(introduce).to.equal("My name is Tom. I am 21 years old. I am a Teacher. I teach No Class.");
-       });
-   }); 
+        it("should overwrite Person introduce, introduce with name, age and class number, given teacher have no class", () => {
+            const teacher = new Teacher("Tom", 21);
+            const introduce = teacher.introduce();
+            expect(introduce).to.equal("My name is Tom. I am 21 years old. I am a Teacher. I teach No Class.");
+        });
+    });
 });

@@ -1,13 +1,14 @@
 "use strict";
-import chai from "chai";
-import sinonChai from "sinon-chai";
+var chai = require('chai')
+var sinonChai = require('sinon-chai')
 const expect = chai.expect;
 chai.use(sinonChai);
 
-import Person from "../../src/practice_1/person.js";
+var {Person} = require("../../src/practice_1/person.js");
 
 describe("Person", () => {
     it("should have field name and age", () => {
+        
         const person = new Person("Tom", 21);
         expect(person.name).to.equal("Tom");
         expect(person.age).to.equal(21);

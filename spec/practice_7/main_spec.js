@@ -1,13 +1,13 @@
 "use strict";
-import chai from "chai";
-import sinonChai from "sinon-chai";
+var chai = require("chai");
+var sinonChai = require("sinon-chai");
 const expect = chai.expect;
 chai.use(sinonChai);
 
-import Person from "../../src/practice_7/person.js";
-import Student from "../../src/practice_7/student.js";
-import Teacher from "../../src/practice_7/teacher.js";
-import Class from "../../src/practice_7/class.js";
+var Person = require("../../src/practice_7/person.js");
+var Student = require("../../src/practice_7/student.js");
+var Teacher = require("../../src/practice_7/teacher.js");
+var Class = require("../../src/practice_7/class.js");
 
 describe("Person", () => {
     it("should have field name and age", () => {
@@ -25,9 +25,9 @@ describe("Person", () => {
     describe("Student", () => {
         let klass;
 
-        before(() => {
+        // before(() => {
            klass = new Class(2); 
-        });
+        // });
 
         it("should have field name, age and class number", () => {
             const student = new Student("Tom", 21, klass);
@@ -46,9 +46,9 @@ describe("Person", () => {
     describe("Teacher", () => {
         let klass;
 
-        before(() => {
+        // before(() => {
             klass = new Class(2);
-        });
+        // });
 
         it("should have field name, age and class number", () => {
             const teacher = new Teacher("Tom", 21, klass);
@@ -74,9 +74,9 @@ describe("Person", () => {
         describe("#introduceWith", () => {
             let studentJerry;
 
-            before(() => {
+            // before(() => {
                 studentJerry = new Student("Jerry", 8, klass);
-            });
+            // });
 
             it("should return I am teaching some guy, given my class is same with this guy's class", () => {
                 const teacher = new Teacher("Tom", 21, klass);

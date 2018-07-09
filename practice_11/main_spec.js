@@ -1,15 +1,16 @@
 "use strict";
-import _ from "lodash";
-import chai from "chai";
-import sinon from "sinon";
-import sinonChai from "sinon-chai";
+var chai = require('chai')
+var sinon = require('sinon')
+var sinonChai = require('sinon-chai')
+var _  = require( "lodash");
 const expect = chai.expect;
 chai.use(sinonChai);
 
-import Person from "../../src/practice_11/person.js";
-import Student from "../../src/practice_11/student.js";
-import Teacher from "../../src/practice_11/teacher.js";
-import Class from "../../src/practice_11/class.js";
+var Person= require( "../../src/practice_11/person.js");
+var Student= require( "../../src/practice_11/student.js");
+var Teacher= require( "../../src/practice_11/teacher.js");
+var Class= require( "../../src/practice_11/class.js");
+
 
 describe("Person", () => {
     it("should have field name and age", () => {
