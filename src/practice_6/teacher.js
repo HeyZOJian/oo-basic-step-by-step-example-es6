@@ -8,14 +8,8 @@ class Teacher extends Person {
     }
 
     introduce() {
-        let introduceStr = super.introduce();
-        if (!this.klass) {
-            this.klass = 'No Class'
-        } else {
-            this.klass = 'Class ' + this.klass
-        }
-        introduceStr += ` I am a Teacher. I teach ${this.klass}.`;
-        return introduceStr;
+        const klassString = (this.klass === undefined) ? 'No Class' : `Class ${this.klass}`
+        return `${super.introduce()} I am a Teacher. I teach ${klassString}.`;
     }
 }
 module.exports = Teacher
