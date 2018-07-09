@@ -10,6 +10,10 @@ class Student extends Person {
         introduceStr += ` I am a Student. I am at ${this.klass.getDisplayName()}.`
         return introduceStr;
     }
+
+    getKlassName(){
+        return this.klass.getDisplayName();
+    }
 }
 
 module.exports = Student

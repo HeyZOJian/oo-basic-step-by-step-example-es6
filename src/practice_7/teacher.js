@@ -19,7 +19,7 @@ class Teacher extends Person {
     introduceWith(student) {
         let introduceWithStr = super.introduce();
         introduceWithStr += ` I am a Teacher.`
-        if (student.klass.getDisplayName() === this.klass.getDisplayName()) {
+        if (student.getKlassName() === this.klass.getDisplayName()) {
             introduceWithStr += ` I teach ${student.name}.`;
         } else {
             introduceWithStr += ` I don't teach ${student.name}.`
