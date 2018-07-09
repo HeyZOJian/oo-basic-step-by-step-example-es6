@@ -8,23 +8,17 @@ class Teacher extends Person {
     }
 
     introduce() {
-        let introduceStr = super.introduce();
-        if (this.klass)
-            introduceStr += ` I am a Teacher. I teach ${this.klass.getDisplayName()}.`;
-        else
-            introduceStr += ` I am a Teacher. I teach No Class.`;
-        return introduceStr;
+        const klassString = (this.klass === undefined) ?
+            'No Class' :
+            `${this.klass.getDisplayName()}`
+        return `${super.introduce()} I am a Teacher. I teach ${klassString}.`;
     }
 
     introduceWith(student) {
-        let introduceWithStr = super.introduce();
-        introduceWithStr += ` I am a Teacher.`
-        if (student.getKlassName() === this.klass.getDisplayName()) {
-            introduceWithStr += ` I teach ${student.name}.`;
-        } else {
-            introduceWithStr += ` I don't teach ${student.name}.`
-        }
-        return introduceWithStr;
+        const studentString = (student.getKlassName() === this.klass.getDisplayName()) ?
+            ` I teach ${student.name}` :
+            ` I don't teach ${student.name}`
+        return `${super.introduce()} I am a Teacher.${studentString}.`;
     }
 }
 module.exports = Teacher
